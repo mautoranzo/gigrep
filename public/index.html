@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Songs List</title>
+  </head>
+
+  <body>
+    <h1>Songs List</h1>
+    <button type="button" id="logoff" style="display: none">logoff</button>
+    <hr />
+    <p id="message"></p>
+    <hr />
+    <div id="logon-register" style="display: none">
+      <button type="button" id="logon">logon</button>
+      <button type="button" id="register">register</button>
+    </div>
+    <div id="logon-div" style="display: none">
+      <form>
+        <div>
+          <label for="email">email:</label>
+          <input type="email" id="email" />
+        </div>
+        <div>
+          <label for="password">password:</label>
+          <input type="password" id="password" />
+        </div>
+        <button type="button" id="logon-button">logon</button>
+        <button type="button" id="logon-cancel">cancel</button>
+      </form>
+    </div>
+    <div id="register-div" style="display: none">
+      <form>
+        <div>
+          <label for="name">name:</label>
+          <input type="text" id="name" />
+        </div>
+        <div>
+          <label for="email1">email:</label>
+          <input type="email" id="email1" />
+        </div>
+        <div>
+          <label for="password1">password:</label>
+          <input type="password" id="password1" />
+        </div>
+        <div>
+          <label for="password2">verify password:</label>
+          <input type="password" id="password2" />
+        </div>
+        <button type="button" id="register-button">register</button>
+        <button type="button" id="register-cancel">cancel</button>
+      </form>
+    </div>
+    <div id="songs" style="display: none">
+      <p id="songs-message"></p>
+      <table id="songs-table" style="display: none">
+        <tr id="songs-table-header">
+          <th>Song Name</th>
+          <th>Author</th>
+          <th>Key</th>
+          <th>First Chord</th>
+          <th>Capo</th>
+          <th>Bpm</th>
+          <th>System</th>
+          <th colspan="2"></th>
+        </tr>
+      </table>
+      <button type="button" id="add-song">add song</button>
+    </div>
+    <div id="edit-song" style="display: none">
+      <form>
+        <div>
+          <label for="songName">Song Name:</label>
+          <input type="text" id="songName" />
+        </div>
+        <div>
+          <label for="author">author:</label>
+          <input type="text" id="author" />
+        </div>
+        <div>
+          <label for="key">key:</label>
+          <select id="key">
+            <option value="Ab">Ab</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="Bb">Bb</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="Db">Db</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="Eb">Eb</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="Gb">Gb</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+          </select>
+        </div>
+        <div>
+          <label for="firstChord">First Chord:</label>
+          <select id="firstChord">
+            <option value="Ab">Ab</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="Bb">Bb</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="Db">Db</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="Eb">Eb</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="Gb">Gb</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+          </select>
+        </div>
+        <div>
+          <label for="capo">Capo:</label>
+          <input type="number" id="capo" />
+        </div>
+        <div>
+          <label for="bpm">bpm:</label>
+          <input type="number" id="bpm" />
+        </div>
+        <div>
+          <label for="system">System:</label>
+          <select id="system">
+            <option value="Letters">Letters</option>
+            <option value="Notes">Notes</option>
+          </select>
+        </div>
+        <button type="button" id="adding-song">add</button>
+        <button type="button" id="edit-cancel">cancel</button>
+      </form>
+    </div>
+    <script src="./songs.js"></script>
+  </body>
+</html>
