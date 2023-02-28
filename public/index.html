@@ -4,76 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Songs List</title>
+    <title>GigRep</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
-    <h1>Songs List</h1>
+    <!-- <h1>GigRep</h1> -->
+    <img src="./imgs/logo BW.jpg" />
     <button type="button" id="logoff" style="display: none">logoff</button>
     <hr />
     <p id="message"></p>
     <hr />
     <div id="logon-register" style="display: none">
-      <button type="button" id="logon">logon</button>
-      <button type="button" id="register">register</button>
+      <button type="button" id="logon">Login</button>
+      <button type="button" id="register">Register</button>
     </div>
     <div id="logon-div" style="display: none">
       <form>
         <div>
-          <label for="email">email:</label>
+          <label for="email">e-mail:</label>
           <input type="email" id="email" />
         </div>
         <div>
-          <label for="password">password:</label>
+          <label for="password">Password:</label>
           <input type="password" id="password" />
         </div>
-        <button type="button" id="logon-button">logon</button>
-        <button type="button" id="logon-cancel">cancel</button>
+        <button type="button" id="logon-button">Login</button>
+        <button type="button" id="logon-cancel">Cancel</button>
       </form>
     </div>
     <div id="register-div" style="display: none">
       <form>
         <div>
-          <label for="name">name:</label>
+          <label for="name">Name:</label>
           <input type="text" id="name" />
         </div>
         <div>
-          <label for="email1">email:</label>
+          <label for="email1">e-mail:</label>
           <input type="email" id="email1" />
         </div>
         <div>
-          <label for="password1">password:</label>
+          <label for="password1">Password:</label>
           <input type="password" id="password1" />
         </div>
         <div>
-          <label for="password2">verify password:</label>
+          <label for="password2">Verify Password:</label>
           <input type="password" id="password2" />
         </div>
         <button type="button" id="register-button">register</button>
         <button type="button" id="register-cancel">cancel</button>
       </form>
     </div>
-    <div id="songs" style="display: none">
-      <p id="songs-message"></p>
-      <table id="songs-table" style="display: none">
-        <tr id="songs-table-header">
-          <th>Song Name</th>
-          <th>Author</th>
-          <th>Key</th>
-          <th>First Chord</th>
-          <th>Capo</th>
-          <th>Bpm</th>
-          <th>System</th>
-          <th colspan="2"></th>
-        </tr>
-      </table>
-      <button type="button" id="add-song">add song</button>
+    <div id="gigrep" style="display: none">
+      <div id="songs">
+        <div class="title-btn">
+          <h2>Your Rep</h2>
+          <button type="button" id="add-song">add song</button>
+          <input type="text" id="search-input" placeholder="Search" />
+          <button id="search-btn">Search</button>
+        </div>
+        <p id="songs-message"></p>
+        <table id="songs-table" style="display: none">
+          <tr id="songs-table-header">
+            <th>Song / Chords</th>
+            <!-- <button id="songSort" class="sortBtn">Song / Chords</button> -->
+            <th>Author</th>
+            <th>Key</th>
+            <th>First Chord</th>
+            <th>Capo</th>
+            <th>Bpm</th>
+            <th>System</th>
+            <th>Link to Audio/Video</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </table>
+      </div>
+      <hr />
+      <div id="gigs">
+        <div class="title-btn">
+          <h2>Your Gigs</h2>
+          <button type="button" id="add-gig">add gig</button>
+        </div>
+        <p id="gigs-message"></p>
+        <table id="gigs-table" style="display: none">
+          <tr id="gigs-table-header">
+            <th>Gig Name</th>
+            <th colspan="2"></th>
+          </tr>
+        </table>
+      </div>
     </div>
     <div id="edit-song" style="display: none">
       <form>
         <div>
           <label for="songName">Song Name:</label>
           <input type="text" id="songName" />
+        </div>
+        <div>
+          <label for="songName">Chords:</label>
+          <input type="text" id="chords" />
         </div>
         <div>
           <label for="author">author:</label>
@@ -138,9 +168,48 @@
             <option value="Notes">Notes</option>
           </select>
         </div>
+        <div>
+          <label for="link">Audio/Video Link:</label>
+          <input type="text" id="link" />
+        </div>
         <button type="button" id="adding-song">add</button>
         <button type="button" id="edit-cancel">cancel</button>
       </form>
+    </div>
+
+    <div id="gig" style="display: none">
+      <button type="button" id="back-to-main-menu">Back to main menu</button>
+      <h2 id="gig-title"></h2>
+      <table id="gig-songs-table">
+        <tr id="gig-songs-table-header">
+          <th>Song / Chords</th>
+          <th>Key</th>
+          <th>First Chord</th>
+          <th>Capo</th>
+          <th>Bpm</th>
+          <th>Link to Audio/Video</th>
+        </tr>
+      </table>
+      <button type="button" id="add-songs-to-gig">Add/Delete Songs</button>
+    </div>
+
+    <div id="edit-gig" style="display: none">
+      <p id="gig-songs-message"></p>
+      <form>
+        <div>
+          <label for="gigName">Gig Name:</label>
+          <input type="text" id="gigName" />
+        </div>
+      </form>
+      <table id="edit-gig-songs-table">
+        <tr id="edit-gig-songs-table-header">
+          <th>Song Name</th>
+          <th>Author</th>
+          <th colspan="2"></th>
+        </tr>
+      </table>
+      <button type="button" id="adding-gig">Save</button>
+      <button type="button" id="edit-cancel-gig">Cancel</button>
     </div>
     <script src="./songs.js"></script>
   </body>

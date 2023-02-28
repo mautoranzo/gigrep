@@ -14,6 +14,7 @@ const authenticateUser = require('./middleware/authentication')
 
 const authRouter = require('./routes/auth')
 const songsRouter = require('./routes/songs')
+const gigsRouter = require('./routes/gigs')
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
@@ -32,7 +33,9 @@ app.use(rateLimiter({
 app.use(express.static('public'))
 
 app.use('/api/v1/auth',authRouter)
-app.use('/api/v1/songs', authenticateUser, songsRouter)
+app.use('/api/v1/gigrep', authenticateUser, songsRouter, gigsRouter)
+// app.use('/api/v1/gigrep', authenticateUser, songsRouter)
+// app.use('/api/v1/gigrep', authenticateUser, gigsRouter)
 
 
 app.use(notFoundMiddleware);

@@ -32,7 +32,7 @@ const deleteSong = async (req,res) =>{
     const {user:{userId}, params:{id:songId}} = req
     const song = await Song.findOneAndRemove({_id:songId, createdBy:userId})
     if(!song) throw new NotFoundError(`No song with id ${songId}`)
-    res.status(StatusCodes.OK).json({msg:`${song.songName} song with id ${songId} deleted`}) 
+    res.status(StatusCodes.OK).json({msg:`Song "${song.songName}" deleted`}) 
 }
 
 module.exports = {
